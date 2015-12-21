@@ -1,0 +1,21 @@
+{
+  "name": "jquery-simple-file-preview",
+  "version": "0.1.0",
+  "description": "Simple file preview UI",
+  "main": "jquery.simpleFilePreview.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jakerella/jquerySimpleFilePreview.git"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "form",
+    "file upload"
+  ],
+  "author": "Jordan Kasper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jakerella/jquerySimpleFilePreview/issues"
+  },
+  "homepage": "https://github.com/jakerella/jquerySimpleFilePreview"
+}

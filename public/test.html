@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- viewport meta to reset iPhone inital scale -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Demo: Chat Main window</title>
+
+    <!-- css3-mediaqueries.js for IE8 or older -->
+    <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+    <link rel="stylesheet" href="css/test.css">
+
+</head>
+
+<body>
+
+    <div id="pagewrap">
+
+        <div id="header">
+            <h1>Header</h1>
+        </div>
+
+        <div id="content">
+            <h2>Content</h2>
+
+        </div>
+
+        <div id="sidebar">
+            <h3>Sidebar</h3>
+
+        </div>
+
+        <div id="footer">
+            <h4>Footer</h4>
+        </div>
+
+    </div>
+    <div id="livechat-full" style="position: fixed; bottom: 0px; right: 15px; width: 400px; height: 450px; overflow: hidden; visibility: hidden; z-index: 2147483639; background: none repeat scroll 0% 0% transparent; border: 0px none; opacity: 0;">
+        <iframe frameborder="0" src="http://localhost:3000/" id="livechat-full-view" name="livechat-full-view" scrolling="yes" allowtransparency="true" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%; border: 0px none; padding: 0px; margin: 0px; background: none repeat scroll 0% 0% transparent;"></iframe>
+    </div>
+    <ul class="livechat-container  livechat-container--website">
+        <li class="cell chat ">
+            <p>Chat Now</p>
+            <span class="active-border"></span>
+        </li>
+    </ul>
+</body>
+<script src="js/jquery.js"></script>
+<script type="text/javascript">
+jQuery('.livechat-container--website').click(function(){
+    jQuery(this).find('li').toggleClass('active');
+
+    if(jQuery('#livechat-full').css('opacity') == 0 )
+        jQuery('#livechat-full').css('opacity',1);
+    else
+      jQuery('#livechat-full').css('opacity',0);
+    if(jQuery('#livechat-full').css('visibility') == 'visible')
+        jQuery('#livechat-full').css('visibility','hidden');
+    else
+      jQuery('#livechat-full').css('visibility','visible');
+
+})
+</script>>
+</html>

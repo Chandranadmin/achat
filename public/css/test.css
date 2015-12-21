@@ -1,0 +1,181 @@
+
+body {
+    font: 1em/150% Arial, Helvetica, sans-serif;
+}
+a {
+    color: #669;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+h1 {
+    font: bold 36px/100% Arial, Helvetica, sans-serif;
+}
+
+/************************************************************************************
+STRUCTURE
+*************************************************************************************/
+#pagewrap {
+    padding: 5px;
+    width: 960px;
+    margin: 20px auto;
+}
+#header {
+    height: 180px;
+}
+#content {
+    width: 600px;
+    float: left;
+}
+#sidebar {
+    width: 300px;
+    float: right;
+}
+#footer {
+    clear: both;
+}
+#content,#sidebar {min-height: 500px;}
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+/* for 980px or less */
+@media screen and (max-width: 980px) {
+
+    #pagewrap {
+        width: 94%;
+    }
+    #content {
+        width: 65%;
+    }
+    #sidebar {
+        width: 30%;
+    }
+
+}
+
+/* for 700px or less */
+@media screen and (max-width: 700px) {
+
+    #content {
+        width: auto;
+        float: none;
+    }
+    #sidebar {
+        width: auto;
+        float: none;
+    }
+
+}
+
+/* for 480px or less */
+@media screen and (max-width: 480px) {
+
+    #header {
+        height: auto;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    #sidebar {
+        display: none;
+    }
+
+}
+
+/* border & guideline (you can ignore these) */
+#content {
+    background: #f8f8f8;
+}
+#sidebar {
+    background: #f0efef;
+}
+#header, #content, #sidebar {
+    margin-bottom: 5px;
+}
+#pagewrap, #header, #content, #sidebar, #footer {
+    border: solid 1px #ccc;
+}
+.livechat-container {
+    height: 50px;
+    width: auto;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    list-style-type: none;
+    border-top: 1px solid #333333;
+    background-color: #48e0a4;
+    z-index: 103;
+    margin: 0;
+    padding: 0;
+}
+.livechat-container {
+  border-left: 0 none;
+}
+.livechat-container li:last-child {
+border-right: 0;
+}
+.livechat-container .active {
+  background-color: #1c1c1e;
+  bottom: 3px;
+  overflow: hidden;
+  z-index: 104;
+}
+.livechat-container--website li {
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: #000000;
+  background-size: auto auto;
+  padding: 5px 15px 12px 50px;
+  width: 150px;
+}
+.livechat-container li {
+  cursor: pointer;
+  list-style-image: none;
+  list-style-type: none;
+}
+.livechat-container li {
+  background-color: #000000;
+  border-right: 0 none;
+  bottom: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  float: left;
+  height: 100%;
+  list-style-image: none;
+  list-style-type: none;
+  position: relative;
+}
+.livechat-container--website li p {
+  color: #ffffff;
+  float: left;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 0;
+  padding: 5px 0 0;
+  text-transform: uppercase;
+}
+.livechat-container .chat.active .active-border {
+  border-right: 1px solid #333333;
+  top: 2px;
+}
+.livechat-container .chat .active-border {
+  border-left: 1px solid #333333;
+  display: block;
+  top: 0;
+}
+.livechat-container li .active-border {
+  box-sizing: border-box;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+#livechat-full {
+  bottom: 49px !important;
+  right: 0 !important;
+  width: 345px !important;
+  z-index: 99 !important;
+}

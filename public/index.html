@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chat</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/flags.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body onload="myFunction()">
+<div class="main col-md-4 col-md-offset-4">
+    <div id="login-screen">
+        <p class="lead">Chat Application</p>
+        <p class="chat">Please enter your to name joint chatApp</p>
+        <form class="form" id="nameForm">
+            <div class="form-group">
+                <input type="text" class="form-control input-lg chat" placeholder="Yourname" id="name" >
+            </div>
+            <input type="submit" name="join" id="join" value="Join" class="btn btn-primary btn-lg join">
+        </form>
+        <div class="alert alert-danger chat" id="errors"></div>
+    </div>
+</div>
+<div class="row" id="main-chat-screen">
+    <div class="col-md-3">
+        <ul id="rooms" class="list-group"></ul>
+        <ul id="people" class="list-group"></ul>
+    </div>
+    <div class="col-md-6">
+        <div id="conversation">
+            <ul id="msgs" class="list-unstyled"></ul>
+        </div>
+        <form id="chatForm" class="form-inline">
+            <textarea class="form-control text" placeholder="Type Your Message Here..." id="msg"></textarea>
+            <input type="submit" name="send" id="send" value="Send" class="btn btn-success btn-sm">
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-info dropdown-toggle" data-toggle="dropdown" >
+                    Actions <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#" name="createRoom" data-toggle="modal" data-target="#roomModal">Create room</a></li>
+                    <li><a href="#"  id="leave">Leave current room</a></li>
+                    <!--<li><a href="#" name="disconnect" id="disconnect">Disconnect from chat</a></li>-->
+                </ul>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-2">
+        <ul class="list-unstyled" id="updates"></ul>
+    </div>
+</div>
+
+<div class="modal fade" id="roomModal" tabindex="-1" role="dialog" aria-labelledby="createRoomLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="createRoomLabel">Create room</h4>
+            </div>
+            <div class="modal-body">
+                You can create a chat room here. Names have to be unique.
+                <form class="form-inline" id="createRoomForm"><input type="text" class="form-control input-lg"  placeholder="Room name" id="createRoomName"></form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-lg btn-default" data-dismiss="modal">Close</button>
+                <button data-dismiss="modal" id="createRoomBtn" class="btn btn-success btn-lg">Create room</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal end -->
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/client.js"></script>
+<script src="http://www.datejs.com/build/date.js"></script>
+</body>
+</html>
