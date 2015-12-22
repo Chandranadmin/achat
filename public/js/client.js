@@ -287,7 +287,8 @@ $(document).ready(function () {
         $("#people").empty();
         $('#people').append("<li class=\"list-group-item active\"><strong>People online</strong><span class=\"badge\">"
             + data.count + "</span></li>");
-        $.each(data.people, function (a, obj) {
+        $.each(data.people, function (a, obj) {heroku
+
             if (!("country" in obj)) {
                 html = "";
             } else {
